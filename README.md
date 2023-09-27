@@ -8,15 +8,8 @@ The **Bank Transaction Management System** is a web application designed to stre
 
 To enhance security and control access to the Bank Transaction Management System, implemented JWT (JSON Web Tokens) authentication. This ensures that only authorized users can interact with the application.
 
-### Steps to Implement JWT Authentication
-
-1. **Install JWT Library**:
-
-   - Start by installing a JWT library `jsonwebtoken`.
-
-2. **User Registration and Login**:
-   - Create endpoints for user registration and login.
-   - During registration, store user information in the database (username, password, role).
+1. **User Registration and Login**:
+   - During registration, store the email, password(HASHED),role in the database.
    - Upon successful login, generate a JWT token with a payload containing relevant user information.
 
 ### Intuitive Main Page
@@ -95,7 +88,7 @@ The application seamlessly integrates with a web server for data retrieval and p
 5.  Setup environmental Variables:
 
     ```bash
-    touch .env
+    touch .env or create .env file
     ```
 
     ```env
@@ -184,7 +177,7 @@ Authenticate and receive a JWT token.
 
 ### Multi Value Form
 
-- **Dynamic Form**: Allows adding, removing, and clearing forms.
+- **Dynamic Form**: Allows adding, removing.
 - **Auto-Population**: Populates fields based on customer number with error handling.
 - **Region-Specific Logic**: Adjusts form requirements based on selected region.
 - **Transaction Type Logic**: Handles "New" and "Existing" transaction types.
