@@ -85,6 +85,12 @@ The application seamlessly integrates with a web server for data retrieval and p
     npm install
     ```
 
+    ```json
+    // Add on top of the package.json
+
+    "proxy": "http://localhost:8000",
+    ```
+
 5.  Setup environmental Variables:
 
     ```bash
@@ -99,7 +105,7 @@ The application seamlessly integrates with a web server for data retrieval and p
 6.  Run the frontend server
 
     ```bash
-    cd into fronend
+    cd into frontend
     ```
 
     ```bash
