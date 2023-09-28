@@ -12,6 +12,7 @@ import { debouncedFetchCustomerData } from "../../utils/debounce";
 import InputField from "../ui/InputField";
 import RadioButton from "../ui/RadioButton";
 import Dropdown from "../ui/Dropdown";
+import { motion } from "framer-motion";
 
 const NewTransaction = () => {
   const [selectedType, setSelectedType] = useState("New");
@@ -73,7 +74,13 @@ const NewTransaction = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto mt-10 p-6 border rounded shadow ">
+    <motion.div
+      className="max-w-4xl mx-auto mt-10 p-6 border rounded shadow "
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <h2 className="text-2xl font-bold mb-4">{selectedType}</h2>
       <form onSubmit={handleSubmit(onSubmit)} className="flex flex-wrap -mx-4">
         <div className="mb-4 px-4 w-1/2">
@@ -205,7 +212,7 @@ const NewTransaction = () => {
         </div>
       </form>
       <Toaster />
-    </div>
+    </motion.div>
   );
 };
 

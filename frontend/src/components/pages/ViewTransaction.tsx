@@ -13,6 +13,7 @@ import { ArrowDownNarrowWide, Filter } from "lucide-react";
 import { FormValues } from "../../types/FormValues";
 import { useUser } from "../../context/AuthContext";
 import { getAllTransactions } from "../../utils/getAllTransactions";
+import { motion } from "framer-motion";
 
 const ViewTransaction: React.FC = () => {
   const [page, setPage] = useState(0);
@@ -75,7 +76,13 @@ const ViewTransaction: React.FC = () => {
   };
 
   return (
-    <div className="mx-auto pt-10 max-w-4xl rounded-lg ">
+    <motion.div
+      className="mx-auto pt-10 max-w-4xl rounded-lg "
+      initial={{ opacity: 0, y: -20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: -20 }}
+      transition={{ duration: 0.5 }}
+    >
       <h1 className="py-6 text-3xl">Transaction View </h1>
       <TableContainer component="div">
         <Table aria-label="transaction table ">
@@ -130,7 +137,7 @@ const ViewTransaction: React.FC = () => {
         onPageChange={handleChangePage}
         onRowsPerPageChange={handleChangeRowsPerPage}
       />
-    </div>
+    </motion.div>
   );
 };
 
