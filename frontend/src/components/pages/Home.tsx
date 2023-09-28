@@ -42,10 +42,6 @@ export default function Home() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.5, delay: 0.6 }}
           >
-            {/* <Link
-              to="/login"
-              className="rounded-md border border-black px-3 py-2 text-sm font-semibold text-black shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-black"
-            ></Link> */}
             <Link
               to="/login"
               className="inline-flex items-center bg-gray-800 px-3 py-2 text-sm font-semibold text-white hover:bg-gray-800/80"
